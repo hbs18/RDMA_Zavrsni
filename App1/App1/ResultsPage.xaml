@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.ResultsPage"
+             Title="Results">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="64"></RowDefinition>
+                <!-- prvi row, za headere-->
+                <RowDefinition Height="*"></RowDefinition>
+                <!-- drugi row, za listu -->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+
+            <Frame BackgroundColor="DarkOrange" Grid.Column="0" Grid.Row="0">
+                <StackLayout>
+                    <Label FontSize="10" TextColor="White" FontAttributes="Bold" Text="User ID"></Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="SortByUserID"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="DarkOrange" Grid.Column="1" Grid.Row="0">
+                <StackLayout>
+                    <Label FontSize="10" TextColor="White" FontAttributes="Bold" Text="Exercise ID"></Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="SortByExerciseID"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="DarkOrange" Grid.Column="2" Grid.Row="0">
+                <StackLayout>
+                    <Label FontSize="10" TextColor="White" FontAttributes="Bold" Text="Percent"></Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="SortByPercent"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="DarkOrange" Grid.Column="3" Grid.Row="0">
+                <StackLayout>
+                    <Label FontSize="10" TextColor="White" FontAttributes="Bold" Text="Score"></Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="SortByScore"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="DarkOrange" Grid.Column="4" Grid.Row="0">
+                <StackLayout>
+                    <Label FontSize="10" TextColor="White" FontAttributes="Bold" Text="Skill"></Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="SortBySkill"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="DarkOrange" Grid.Column="5" Grid.Row="0">
+                <StackLayout>
+                    <Label FontSize="10" TextColor="White" FontAttributes="Bold" Text="Max score"></Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="SortByMaxScore"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Frame>
+
+            <ListView x:Name="resultList" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="6" RowHeight="40">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label FontSize="6" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="10" HorizontalTextAlignment="Center" Text="{Binding userID}"></Label>
+                                <Label FontSize="6" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="100" HorizontalTextAlignment="Center" Text="{Binding exerciseID}"></Label>
+                                <Label FontSize="6" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="20" HorizontalTextAlignment="Center" Text="{Binding percent}"></Label>
+                                <Label FontSize="6" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="20" HorizontalTextAlignment="Center" Text="{Binding score}"></Label>
+                                <Label FontSize="6" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="20" HorizontalTextAlignment="Center" Text="{Binding skill}"></Label>
+                                <Label FontSize="6" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="20" HorizontalTextAlignment="Center" Text="{Binding maxScore}"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+
+    </ContentPage.Content>
+</ContentPage>
