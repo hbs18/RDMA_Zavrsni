@@ -50,27 +50,32 @@ namespace App1
         }
         public void SortByUserID(object sender, System.EventArgs e)
         {
-            //todo
+            resultList.ItemsSource = list;
         }
         public void SortByExerciseID(object sender, System.EventArgs e)
         {
-            //todo
+            List<ResultModel> sortedListExerciseID = list.OrderByDescending(x => x.exerciseID).ToList();
+            resultList.ItemsSource = sortedListExerciseID;
         }
         public void SortByPercent(object sender, System.EventArgs e)
         {
-            //todo
+            List<ResultModel> sortedListPercent = list.OrderByDescending(x => x.percent).ToList();
+            resultList.ItemsSource = sortedListPercent;
         }
         public void SortByScore(object sender, System.EventArgs e)
         {
-            //todo
+            List<ResultModel> sortedListScore = list.OrderByDescending(x => x.score).ToList();
+            resultList.ItemsSource = sortedListScore;
         }
         public void SortBySkill(object sender, System.EventArgs e)
         {
-            //todo
+            List<ResultModel> sortedListSkill = list.OrderByDescending(x => x.skill).ToList();
+            resultList.ItemsSource = sortedListSkill;
         }
         public void SortByMaxScore(object sender, System.EventArgs e)
         {
-            //todo
+            List<ResultModel> sortedListMaxScore = list.OrderByDescending(x => x.maxScore).ToList();
+            resultList.ItemsSource = sortedListMaxScore;
         }
     }
 }
