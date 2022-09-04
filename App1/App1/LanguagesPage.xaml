@@ -16,9 +16,9 @@
             </Grid.ColumnDefinitions>
 
 
-            <Frame BackgroundColor="Teal" Grid.Column="0" Grid.Row="0">
+            <Frame BackgroundColor="Teal" Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3">
                 <StackLayout>
-                    <Label TextColor="White" FontAttributes="Bold" Text="Language"></Label>
+                    <Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" Text="Language"></Label>
                 </StackLayout>
             </Frame>
 
